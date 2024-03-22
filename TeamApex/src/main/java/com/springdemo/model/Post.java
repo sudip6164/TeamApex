@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -17,7 +18,8 @@ public class Post {
 	private String category;
 	private String location;
 	private String description;
-	private String image;
+	@Lob // Indicates that the image data will be stored as a large object
+    private byte[] image;
 	public User getU() {
 		return u;
 	}
@@ -50,12 +52,13 @@ public class Post {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getImage() {
+	public byte[] getImage() {
 		return image;
 	}
-	public void setImage(String image) {
+	public void setImage(byte[] image) {
 		this.image = image;
 	}
+	
 	
 	
 }
