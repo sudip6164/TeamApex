@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+</head>
+<body>
+    <h2>Upload Image</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+        </div>
+        <div>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        <div>
+            <label for="text">Description:</label>
+            <textarea id="text" name="text" required></textarea>
+        </div>
+        <div>
+            <label for="image">Choose Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

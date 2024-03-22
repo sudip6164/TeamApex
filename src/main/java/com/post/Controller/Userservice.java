@@ -13,9 +13,9 @@ public class Userservice {
 	private Prepo prepo;
 	
 	
-	public  void addPost(Post p)
+	public  void addPost(Post post)
 	{
-		prepo.save(p);
+		prepo.save(post);
 	}
 	
 	

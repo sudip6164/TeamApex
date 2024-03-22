@@ -21,8 +21,8 @@ public class Post {
 	private String text;
 	
 	
-	@Lob
-	private byte[] postphoto;
+	
+	private String postphoto;
 
 
 	
@@ -67,14 +67,17 @@ public class Post {
 	}
 
 
-	public byte[] getPostphoto() {
+	public String getPostphoto() {
 		return postphoto;
 	}
 
 
-	public void setPostphoto(byte[] postphoto) {
+	public void setPostphoto(String postphoto) {
 		this.postphoto = postphoto;
 	}
+
+
+	
 
 
 	
