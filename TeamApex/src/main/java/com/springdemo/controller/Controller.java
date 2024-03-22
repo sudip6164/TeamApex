@@ -28,7 +28,7 @@ public class Controller {
 	    {
 	    	
 	    	session.setAttribute("ActiveUser", u.getPhonenumber());
-	    	session.setMaxInactiveInterval(60);
+	    	session.setMaxInactiveInterval(600);
 	        List<User> userList = uRepo.findAll();
 	        model.addAttribute("uList", userList); // Adding the 'uList' attribute to the model
 	        return "home.html"; // Redirecting to home page or any other appropriate page after successful login
