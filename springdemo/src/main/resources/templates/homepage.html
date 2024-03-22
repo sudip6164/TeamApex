@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+<h1>This is home page</h1><br><br>
+<table style="width:100%;border-collapse: collapse;" border="1px" >
+	<tr>
+		<th>Id</th>
+		<th>Username</th>
+		<th>Password</th>
+		<th>Edit a data</th>
+		<th>Delete a data</th>
+	</tr>
+	<tr th:each="u:${userList}">
+		<td th:text="${u.id}"></td>
+		<td th:text="${u.username}"></td>
+		<td th:text="${u.password}"></td>
+		<td>
+		<a th:href="@{'/edit/'+${u.id}}"><input type="submit" value="Edit"></a>
+		</td>
+	
+		<td>
+		<a th:href="@{'/delete/'+${u.id}}"><input type="submit" value="Delete"></a>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

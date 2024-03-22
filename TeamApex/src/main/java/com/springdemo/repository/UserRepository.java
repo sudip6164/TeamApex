@@ -6,4 +6,5 @@ import com.springdemo.model.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
 	boolean existsByPhonenumberAndPassword(String phonenumber, String password);
+	 User findByPhonenumber(String phonenumber);
 }
