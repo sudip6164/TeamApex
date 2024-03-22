@@ -13,7 +13,7 @@ public class Post {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int postid;
+	private long postid;
 	
 	
 	private String category;
@@ -22,15 +22,17 @@ public class Post {
 	
 	
 	@Lob
-	private String postphoto;
+	private byte[] postphoto;
 
 
-	public int getPostid() {
+	
+
+	public long getPostid() {
 		return postid;
 	}
 
 
-	public void setPostid(int postid) {
+	public void setPostid(long postid) {
 		this.postid = postid;
 	}
 
@@ -65,14 +67,17 @@ public class Post {
 	}
 
 
-	public String getPostphoto() {
+	public byte[] getPostphoto() {
 		return postphoto;
 	}
 
 
-	public void setPostphoto(String postphoto) {
+	public void setPostphoto(byte[] postphoto) {
 		this.postphoto = postphoto;
 	}
+
+
+	
 	
 	
 	
