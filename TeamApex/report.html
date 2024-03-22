@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Feature</title>
+    <style>
+        /* Styles for modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="post">
+        <!-- Content that can be reported -->
+        <h2>Post Title</h2>
+        <p>Post content...</p>
+        <button onclick="openReportModal()">Report</button>
+    </div>
+
+    <!-- Report modal -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeReportModal()" class="close">&times;</span>
+            <h2>Report Content</h2>
+            <form id="reportForm">
+                <select id="reportReason" required>
+                    <option value="" disabled selected>Select reason for reporting</option>
+                    <option value="spam">Spam</option>
+                    <option value="hate_speech">Hate Speech</option>
+                    <option value="false_information">False Information</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea id="customReason" placeholder="Enter additional details (if 'Other' selected)"></textarea>
+                <button type="submit">Submit Report</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        const reportModal = document.getElementById('reportModal');
+
+        // Function to open the modal
+        function openReportModal() {
+            reportModal.style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeReportModal() {
+            reportModal.style.display = 'none';
+        }
+
+        // Submit report form
+        document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const reportReason = document.getElementById('reportReason').value;
+            let customReason = '';
+            if (reportReason === 'other') {
+                customReason = document.getElementById('customReason').value;
+            }
+            // Here, you can send the reportReason and customReason to the server for processing
+            console.log('Report Reason:', reportReason);
+            console.log('Custom Reason:', customReason);
+            closeReportModal(); // Close the modal after submission
+        });
+    </script>
+</body>
+</html>
