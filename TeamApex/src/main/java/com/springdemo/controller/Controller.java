@@ -35,4 +35,15 @@ public class Controller {
 	    }
 	    return "login.html"; // Returning to the login page if login is unsuccessful
 	}
+	
+	@GetMapping("/signup")
+	public String signup(){
+		return "signup.html";
+	}
+	
+	@PostMapping("/register")
+	public String register(@ModelAttribute User u){
+		uRepo.save(u);
+		return "login.html";
+	}
 }

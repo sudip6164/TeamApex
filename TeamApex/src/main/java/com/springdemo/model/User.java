@@ -10,6 +10,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int citizenId;
+	private String fullname;
 	private String phonenumber;
 	private String password;
 	
@@ -18,6 +19,13 @@ public class User {
 	}
 	public void setCitizenId(int citizenId) {
 		this.citizenId = citizenId;
+	}
+	
+	public String getFullname() {
+		return fullname;
+	}
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
 	public String getPhonenumber() {
 		return phonenumber;
