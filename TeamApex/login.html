@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login </title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+
+</head>
+<body>
+  <div class="wrapper">
+    <img class="logo-icon" alt="" src="./image/logo.png" />
+    <h3>Citizen's Voice</h3>
+    <h3 class="h3">सिद्दा कुरा सरकार सित</h3>
+    <form method="post" action="login">
+      <div class="field email">
+        <div class="input-area">
+          <input type="text" placeholder="PhoneNumber" name="PhoneNumber" required>
+          <i class="icon fas fa-phone"></i>
+
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">Phone Number can't be blank</div>
+      </div>
+      <div class="field password">
+        <div class="input-area"> 
+          <input type="password" placeholder="Password" name="password" required>
+          <i class="icon fas fa-lock"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">Password can't be blank</div>
+      </div>
+      <input type="submit" value="LOGIN">
+    </form>
+    <div class="sign-txt">Don’t have an account? <a href="signup.html">Signup now</a></div>
+  </div>
+
+</body>
+</html>
