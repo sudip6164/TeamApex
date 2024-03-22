@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-63.21deg, red, #00b3ff);
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+        }
+        .container {
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .post-form {
+            margin-top: 20px;
+        }
+        .post-form input[type="text"],
+        .post-form textarea,
+        .post-form select,
+        .post-form input[type="file"] {
+            width: calc(100% - 70px); /* Adjusted width */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            resize: vertical;
+        }
+        .post-form select,
+        .post-form input[type="file"] {
+            width: calc(100% - 50px); 
+        }
+        .post-form button {
+            width: calc(100% - 50px); 
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .post-form button:hover {
+            background-color: #0056b3;
+        }
+        .post-form label {
+            margin-right: 10px; 
+        }
+        .title {
+            text-align: center; 
+        }
+        .post-form input[type="radio"] {
+            margin-right: 5px; 
+        }
+
+        .choose-file{
+            width: 45.5rem; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-icon">
+            <img src="./image/logo.png" alt="Logo" width="auto" height="180">
+        </div>
+        <h2 style=" display: flex;
+        justify-content: center;
+        align-items: center;">Citizen's Voice</h2>
+        <h3>Create a New Post</h3>
+        <form class="post-form" action="#" method="post">
+            <select name="category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="education">Education</option>
+                <option value="road">Road</option>
+                <option value="electricity">Electricity</option>
+                <option value="water">Water</option>
+            </select>
+            <select name="location" required>
+                <option value="" disabled selected>Select Location</option>
+                <option value="Achham">Achham</option>
+                <option value="Arghakhanchi">Arghakhanchi</option>
+                <option value="Bhaktapur">Bhaktapur</option>
+                <option value="Kathmandu">Kathmandu</option>
+                <option value="Lalitpur">Lalitpur</option>
+            </select>
+            <textarea name="postContent" placeholder="Write your post here..." required></textarea>
+            <input type="file" name="photo" accept="image/*" class="choose-file" style=" width: calc(100% - 70px);"><br>
+            <input type="radio" id="anonymous" name="postOption" value="anonymous">
+            <label for="anonymous">Post Anonymously:</label>
+            <input type="radio" id="notAnonymous" name="postOption" value="notAnonymous" checked>
+            <label for="notAnonymous">Not Anonymous:</label>    <br><br>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+</body>
+</html>
